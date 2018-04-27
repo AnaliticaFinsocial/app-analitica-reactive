@@ -1,0 +1,12 @@
+.content-wrapper{
+    background-color: #fafafa
+}
+
+.main-logo{
+    height: 80%;
+    padding-bottom: 5px
+}
+
+#DataTables_Table_0_wrapper{
+    overflow-x: scroll
+}
