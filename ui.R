@@ -27,7 +27,7 @@ sidebar <- dashboardSidebar(
       icon = icon('crosshairs'),
       tabName = 'bases-datos',
       badgeLabel = 'Nuevo',
-      badgeColor = 'blue'
+      badgeColor = 'maroon'
       # menuSubItem(
       #   'Bases de Datos',
       #   tabName = 'bases-datos'
@@ -54,7 +54,6 @@ body <- dashboardBody(
           width = 12,
           title = 'Parámetros',
           solidHeader = TRUE,
-          # status = 'info',
           collapsible = TRUE,
           column(
             width = 3,
@@ -517,8 +516,12 @@ body <- dashboardBody(
       fluidRow(
         box(
           width = 12,
-          dataTableOutput(
-            outputId = 'clientesPot_db_table'
+          solidHeader = TRUE,
+          div(
+            class = 'clientes-pot-db-table',
+            dataTableOutput(
+              outputId = 'clientesPot_db_table'
+            )
           ),
           downloadButton(
             outputId = 'clientesPot_db_downloadData',

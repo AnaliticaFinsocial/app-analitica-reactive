@@ -1,5 +1,48 @@
 .content-wrapper{
-    background-color: #fafafa
+    background-color: #e2e1e0
+}
+
+a{
+    color: #0771B4
+}
+
+.box, .skin-black .main-header .navbar, .skin-black .main-header>.logo{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+}
+
+.box-header{
+    background-color: #f5f5f5
+}
+
+.btn-default{
+    background-color: #0771B4 !important;
+    color: #f5f5f5 !important;
+    border: none !important;
+    transition: 500ms ease
+}
+
+.btn-default:hover{
+    background-color: #212121 !important
+}
+
+.irs-bar{
+    border-top: 1px solid #0771B4;
+    border-bottom: 1px solid #0771B4;
+    background: #0771B4
+}
+
+.irs-bar-edge{
+    border: 1px solid #0771B4;
+    background: #0771B4;
+}
+
+.irs-single{
+    background: #0771B4
+}
+
+div.box-body .shiny-input-container{
+    margin-top: 15px
 }
 
 .main-logo{
@@ -7,6 +50,20 @@
     padding-bottom: 5px
 }
 
-#DataTables_Table_0_wrapper{
-    overflow-x: scroll
+.skin-black .sidebar a{
+    color: #f5f5f5
+}
+
+.skin-black .main-sidebar{
+    background: linear-gradient(0deg, #1CB5E0 0%, #000851 100%);
+}
+
+.skin-black .sidebar-menu>li.active>a, .skin-black .sidebar-menu>li:hover>a{
+    background: transparent;
+    border-left: 5px solid #f5f5f5
+}
+
+#clientesPot_db_table .dataTables_wrapper{
+    overflow-x: scroll;
+    margin-bottom: 10px
 }

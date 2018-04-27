@@ -356,7 +356,8 @@ server <- function(input, output){
 ## BASES DE DATOS=============================
   output$clientesPot_db_table <- DT::renderDataTable({
     read_csv("disponibles_Abril.csv") %>%
-      filter(edad == input$clientesPot_db_edad, pagaduria == input$clientesPot_db_pagaduria, municipio == input$clientesPot_db_ciudades)
+      filter(edad == input$clientesPot_db_edad, pagaduria == input$clientesPot_db_pagaduria, municipio == input$clientesPot_db_ciudades) %>% 
+      select(c(-edad, -pagaduria, -municipio))
   })
 
 ## //BASES DE DATOS===========================
