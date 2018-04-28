@@ -2,6 +2,9 @@
 library(shiny)
 library(shinydashboard)
 library(lubridate)
+library(shinycssloaders)
+
+options(spinner.color="#0771B4")
 
 sidebar <- dashboardSidebar(
   sidebarMenu(
@@ -119,8 +122,10 @@ body <- dashboardBody(
                 column(
                   width = 12,
                   align = 'center',
-                  plotOutput(
-                    outputId = 'analisisVentas_ventasPlot'
+                  withSpinner(
+                    plotOutput(
+                      outputId = 'analisisVentas_ventasPlot'
+                    )
                   )
                 )
               ),
@@ -128,8 +133,10 @@ body <- dashboardBody(
                 column(
                   width = 12,
                   align = 'center',
-                  plotOutput(
-                    outputId = 'analisisVentas_cantidadPlot'
+                  withSpinner(
+                    plotOutput(
+                      outputId = 'analisisVentas_cantidadPlot'
+                    )
                   )
                 )
               ),
@@ -519,8 +526,10 @@ body <- dashboardBody(
           solidHeader = TRUE,
           div(
             class = 'clientes-pot-db-table',
-            dataTableOutput(
-              outputId = 'clientesPot_db_table'
+            withSpinner(
+              dataTableOutput(
+                outputId = 'clientesPot_db_table'
+              )
             )
           ),
           downloadButton(
