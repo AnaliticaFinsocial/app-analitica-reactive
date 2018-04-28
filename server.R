@@ -47,20 +47,22 @@ server <- function(input, output){
       creditos() %>%
         mutate(periodo = ymd(periodo), bruto = bruto/1000000, neto = neto/1000000) %>%
         ggplot(aes(x = periodo, y = bruto, label = format(round(bruto, 1), big.mark = ','))) +
-        geom_point(size = 4, color = '#000080') +
-        geom_line(linetype = "dotted", color = '#1b75bc', size = 1) +
+        geom_point(size = 4, color = '#0771B4') +
+        geom_line(linetype = "dotted", color = '#0771B4', size = 1) +
         geom_text(aes(y = bruto + (bruto*0.15)), size = 4, check_overlap = TRUE) +
         scale_x_date(labels = date_format("%m-%Y")) +
+        theme_hc() +
         labs(y = 'Valor en Millones', x = 'Periodo', title = 'Ventas en Millones de Pesos')
     } else {
       creditos_ofic() %>%
         filter(tolower(oficina) == tolower(input$analisisVentas_oficinas)) %>%
         mutate(periodo = ymd(periodo), bruto = bruto/1000000, neto = neto/1000000) %>%
         ggplot(aes(x = periodo, y = bruto, label = format(round(bruto, 1), big.mark = ','))) +
-        geom_point(size = 4, color = '#000080') +
-        geom_line(linetype = "dotted", color = '#1b75bc', size = 1) +
+        geom_point(size = 4, color = '#0771B4') +
+        geom_line(linetype = "dotted", color = '#0771B4', size = 1) +
         geom_text(aes(y = bruto + (bruto*0.15)), size = 4, check_overlap = TRUE) +
         scale_x_date(labels = date_format("%m-%Y")) +
+        theme_hc() +
         labs(y = 'Valor en Millones', x = 'Periodo', title = 'Ventas en Millones de Pesos')
     }
   })
@@ -70,22 +72,24 @@ server <- function(input, output){
       creditos() %>% 
         mutate(periodo=ymd(periodo)) %>% 
         ggplot(aes(x = periodo, y = cantidad)) +
-        geom_line(aes(x=periodo, y=cantidad), linetype = "dotted", size = 1, color = '#1D8348') +
-        geom_point(aes(x=periodo, y=cantidad), size = 4, color = '#1D8348') +
+        geom_line(aes(x=periodo, y=cantidad), linetype = "dotted", size = 1, color = '#FE0868') +
+        geom_point(aes(x=periodo, y=cantidad), size = 4, color = '#FE0868') +
         geom_text(aes(x=periodo, y=cantidad+(cantidad*0.1), label = cantidad), size = 4,
                   check_overlap = TRUE) +
         scale_x_date(labels = date_format("%m-%Y")) +
+        theme_hc() +
         labs(y='', x='Periodo', title='Ventas en Número de Créditos')
     } else {
       creditos_ofic() %>% 
         filter(tolower(oficina) == tolower(input$analisisVentas_oficinas)) %>% 
         mutate(periodo=ymd(periodo)) %>% 
         ggplot(aes(x = periodo, y = cantidad)) +
-        geom_line(aes(x=periodo, y=cantidad), linetype = "dotted", size = 1, color = '#1D8348') +
-        geom_point(aes(x=periodo, y=cantidad), size = 4, color = '#1D8348') +
+        geom_line(aes(x=periodo, y=cantidad), linetype = "dotted", size = 1, color = '#FE0868') +
+        geom_point(aes(x=periodo, y=cantidad), size = 4, color = '#FE0868') +
         geom_text(aes(x=periodo, y=cantidad+(cantidad*0.1), label = cantidad), size = 4,
                   check_overlap = TRUE) +
         scale_x_date(labels = date_format("%m-%Y")) +
+        theme_hc() +
         labs(y='', x='Periodo', title='Ventas en Número de Créditos')
     }
   })
